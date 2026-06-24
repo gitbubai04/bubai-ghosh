@@ -1,4 +1,5 @@
-​<!doctype html>
+​
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -69,14 +70,17 @@
         --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
         --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
       }
+
       *,
       *::before,
       *::after {
         box-sizing: border-box;
       }
+
       html {
         scroll-behavior: smooth;
       }
+
       body {
         background: var(--bg);
         color: var(--bright);
@@ -113,10 +117,12 @@
           opacity 0.8s var(--ease-out-expo),
           visibility 0.8s;
       }
+
       #loader.done {
         opacity: 0;
         visibility: hidden;
       }
+
       .loader-logo {
         font-family: "Syne", sans-serif;
         font-weight: 800;
@@ -124,32 +130,38 @@
         letter-spacing: -0.02em;
         position: relative;
       }
+
       .loader-logo span {
         display: inline-block;
         opacity: 0;
         transform: translateY(40px);
         animation: loaderChar 0.7s var(--ease-out-expo) forwards;
       }
+
       .loader-logo span:nth-child(1) {
         animation-delay: 0.1s;
         color: var(--cyan);
         text-shadow: 0 0 30px rgba(0, 245, 255, 0.5);
       }
+
       .loader-logo span:nth-child(2) {
         animation-delay: 0.2s;
         color: var(--cyan);
         text-shadow: 0 0 30px rgba(0, 245, 255, 0.5);
       }
+
       .loader-logo span:nth-child(3) {
         animation-delay: 0.3s;
         color: var(--bright);
       }
+
       @keyframes loaderChar {
         to {
           opacity: 1;
           transform: translateY(0);
         }
       }
+
       .loader-bar {
         width: 180px;
         height: 1px;
@@ -158,6 +170,7 @@
         overflow: hidden;
         border-radius: 1px;
       }
+
       .loader-bar::after {
         content: "";
         position: absolute;
@@ -166,6 +179,7 @@
         transform: translateX(-100%);
         animation: loaderFill 1.2s var(--ease-in-out-quart) 0.4s forwards;
       }
+
       @keyframes loaderFill {
         to {
           transform: translateX(0);
@@ -205,6 +219,7 @@
         will-change: transform;
         mix-blend-mode: screen;
       }
+
       #cursor-dot {
         width: 6px;
         height: 6px;
@@ -215,6 +230,7 @@
           height 0.25s,
           background 0.25s;
       }
+
       #cursor-ring {
         width: 36px;
         height: 36px;
@@ -225,17 +241,20 @@
           border-color 0.3s,
           background 0.3s;
       }
+
       #cursor-dot.hover {
         width: 10px;
         height: 10px;
         background: var(--violet);
       }
+
       #cursor-ring.hover {
         width: 60px;
         height: 60px;
         border-color: rgba(139, 92, 246, 0.6);
         background: rgba(139, 92, 246, 0.06);
       }
+
       @media (max-width: 1024px), (hover: none) {
         #cursor-dot,
         #cursor-ring {
@@ -247,9 +266,11 @@
       ::-webkit-scrollbar {
         width: 4px;
       }
+
       ::-webkit-scrollbar-track {
         background: var(--bg);
       }
+
       ::-webkit-scrollbar-thumb {
         background: linear-gradient(180deg, var(--cyan), var(--violet));
         border-radius: 2px;
@@ -289,6 +310,7 @@
         -webkit-backdrop-filter: blur(20px);
         border: 1px solid rgba(255, 255, 255, 0.06);
       }
+
       .glass-bright {
         background: rgba(15, 22, 40, 0.5);
         backdrop-filter: blur(30px);
@@ -303,6 +325,7 @@
         position: relative;
         overflow: hidden;
       }
+
       .spotlight::before {
         content: "";
         position: absolute;
@@ -317,9 +340,11 @@
         transition: opacity 0.4s ease;
         z-index: 0;
       }
+
       .spotlight:hover::before {
         opacity: 1;
       }
+
       .spotlight > * {
         position: relative;
         z-index: 1;
@@ -330,6 +355,7 @@
           0 0 20px rgba(0, 245, 255, 0.5),
           0 0 40px rgba(0, 245, 255, 0.2);
       }
+
       .text-glow-violet {
         text-shadow:
           0 0 20px rgba(139, 92, 246, 0.5),
@@ -349,37 +375,46 @@
         background-clip: text;
         animation: gradientShift 4s linear infinite;
       }
+
       @keyframes gradientShift {
         0% {
           background-position: 0% center;
         }
+
         100% {
           background-position: 200% center;
         }
       }
+
       @keyframes float {
         0%,
         100% {
           transform: translateY(0px);
         }
+
         50% {
           transform: translateY(-15px);
         }
       }
+
       .float {
         animation: float 6s ease-in-out infinite;
       }
+
       .float-slow {
         animation: float 9s ease-in-out infinite;
       }
+
       .float-delay {
         animation: float 7s ease-in-out infinite 2s;
       }
+
       @keyframes pulseGlow {
         0%,
         100% {
           box-shadow: 0 0 20px rgba(0, 245, 255, 0.2);
         }
+
         50% {
           box-shadow:
             0 0 40px rgba(0, 245, 255, 0.5),
@@ -397,26 +432,33 @@
           filter 1s var(--ease-out-expo);
         filter: blur(8px);
       }
+
       .reveal-hidden.revealed {
         opacity: 1;
         transform: translateY(0);
         filter: blur(0);
       }
+
       .delay-100 {
         transition-delay: 0.1s;
       }
+
       .delay-200 {
         transition-delay: 0.2s;
       }
+
       .delay-300 {
         transition-delay: 0.3s;
       }
+
       .delay-400 {
         transition-delay: 0.4s;
       }
+
       .delay-500 {
         transition-delay: 0.5s;
       }
+
       .delay-600 {
         transition-delay: 0.6s;
       }
@@ -429,40 +471,52 @@
           opacity 0.6s var(--ease-out-expo),
           transform 0.6s var(--ease-out-expo);
       }
+
       .stagger-children.revealed > * {
         opacity: 1;
         transform: translateY(0);
       }
+
       .stagger-children.revealed > *:nth-child(1) {
         transition-delay: 0.05s;
       }
+
       .stagger-children.revealed > *:nth-child(2) {
         transition-delay: 0.1s;
       }
+
       .stagger-children.revealed > *:nth-child(3) {
         transition-delay: 0.15s;
       }
+
       .stagger-children.revealed > *:nth-child(4) {
         transition-delay: 0.2s;
       }
+
       .stagger-children.revealed > *:nth-child(5) {
         transition-delay: 0.25s;
       }
+
       .stagger-children.revealed > *:nth-child(6) {
         transition-delay: 0.3s;
       }
+
       .stagger-children.revealed > *:nth-child(7) {
         transition-delay: 0.35s;
       }
+
       .stagger-children.revealed > *:nth-child(8) {
         transition-delay: 0.4s;
       }
+
       .stagger-children.revealed > *:nth-child(9) {
         transition-delay: 0.45s;
       }
+
       .stagger-children.revealed > *:nth-child(10) {
         transition-delay: 0.5s;
       }
+
       .stagger-children.revealed > *:nth-child(n + 11) {
         transition-delay: 0.55s;
       }
@@ -477,6 +531,7 @@
           opacity 0.8s var(--ease-out-expo),
           transform 0.9s var(--ease-out-expo);
       }
+
       .char-stagger.revealed .char {
         opacity: 1;
         transform: translateY(0) rotateX(0);
@@ -503,13 +558,16 @@
         -webkit-text-fill-color: transparent;
         background-clip: text;
       }
+
       .reveal-hidden.revealed .section-title {
         animation: titleShine 2.5s var(--ease-out-expo) 0.3s 1;
       }
+
       @keyframes titleShine {
         0% {
           background-position: 200% center;
         }
+
         100% {
           background-position: -100% center;
         }
@@ -519,12 +577,14 @@
       nav {
         transition: all 0.4s var(--ease-out-expo);
       }
+
       nav.scrolled {
         background: rgba(5, 8, 16, 0.9) !important;
         backdrop-filter: blur(30px);
         border-bottom: 1px solid rgba(0, 245, 255, 0.1);
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
       }
+
       .nav-link {
         position: relative;
         color: var(--soft);
@@ -535,6 +595,7 @@
         overflow: hidden;
         padding-bottom: 4px;
       }
+
       .nav-link::before {
         content: attr(data-text);
         position: absolute;
@@ -543,16 +604,20 @@
         transform: translateY(100%);
         transition: transform 0.4s var(--ease-out-expo);
       }
+
       .nav-link:hover::before {
         transform: translateY(0);
       }
+
       .nav-link > span:first-child {
         display: inline-block;
         transition: transform 0.4s var(--ease-out-expo);
       }
+
       .nav-link:hover > span:first-child {
         transform: translateY(-100%);
       }
+
       .nav-link::after {
         content: "";
         position: absolute;
@@ -563,10 +628,12 @@
         background: linear-gradient(90deg, var(--cyan), var(--violet));
         transition: width 0.4s var(--ease-out-expo);
       }
+
       .nav-link:hover::after,
       .nav-link.active::after {
         width: 100%;
       }
+
       .nav-link.active {
         color: var(--cyan);
       }
@@ -583,6 +650,7 @@
         outline: none;
         -webkit-tap-highlight-color: transparent;
       }
+
       .hamburger span {
         display: block;
         width: 22px;
@@ -590,14 +658,17 @@
         background: var(--soft);
         transition: all 0.3s var(--ease-out-expo);
       }
+
       .hamburger.open span:nth-child(1) {
         transform: translateY(6.5px) rotate(45deg);
         background: var(--cyan);
       }
+
       .hamburger.open span:nth-child(2) {
         opacity: 0;
         transform: scaleX(0);
       }
+
       .hamburger.open span:nth-child(3) {
         transform: translateY(-6.5px) rotate(-45deg);
         background: var(--cyan);
@@ -607,6 +678,7 @@
         .hamburger {
           display: flex;
         }
+
         #nav-links {
           display: flex;
           position: absolute;
@@ -624,11 +696,13 @@
           pointer-events: none;
           transition: all 0.4s var(--ease-out-expo);
         }
+
         #nav-links.open {
           transform: translateY(0);
           opacity: 1;
           pointer-events: all;
         }
+
         #nav-links .nav-link {
           padding: 14px 24px;
           font-size: 0.9rem;
@@ -639,31 +713,40 @@
             opacity 0.5s var(--ease-out-expo),
             transform 0.5s var(--ease-out-expo);
         }
+
         #nav-links.open .nav-link {
           opacity: 1;
           transform: translateX(0);
         }
+
         #nav-links.open .nav-link:nth-child(1) {
           transition-delay: 0.05s;
         }
+
         #nav-links.open .nav-link:nth-child(2) {
           transition-delay: 0.1s;
         }
+
         #nav-links.open .nav-link:nth-child(3) {
           transition-delay: 0.15s;
         }
+
         #nav-links.open .nav-link:nth-child(4) {
           transition-delay: 0.2s;
         }
+
         #nav-links.open .nav-link:nth-child(5) {
           transition-delay: 0.25s;
         }
+
         #nav-links.open .nav-link:nth-child(6) {
           transition-delay: 0.3s;
         }
+
         #nav-links.open .nav-link:nth-child(7) {
           transition-delay: 0.35s;
         }
+
         #nav-links.open .nav-link:nth-child(8) {
           transition-delay: 0.4s;
         }
@@ -695,11 +778,13 @@
         color: var(--cyan);
         font-weight: 300;
       }
+
       @keyframes blink {
         0%,
         100% {
           opacity: 1;
         }
+
         50% {
           opacity: 0;
         }
@@ -723,6 +808,7 @@
         position: relative;
         overflow: hidden;
       }
+
       .skill-tag::before {
         content: "";
         position: absolute;
@@ -736,9 +822,11 @@
         transform: translateX(-100%);
         transition: transform 0.6s var(--ease-out-expo);
       }
+
       .skill-tag:hover::before {
         transform: translateX(100%);
       }
+
       .skill-tag:hover {
         background: rgba(0, 245, 255, 0.12);
         border-color: rgba(0, 245, 255, 0.4);
@@ -747,11 +835,13 @@
           inset 0 0 20px rgba(0, 245, 255, 0.05);
         transform: translateY(-3px) scale(1.03);
       }
+
       .skill-tag.violet {
         background: rgba(139, 92, 246, 0.05);
         border-color: rgba(139, 92, 246, 0.15);
         color: #a78bfa;
       }
+
       .skill-tag.violet::before {
         background: linear-gradient(
           120deg,
@@ -760,6 +850,7 @@
           transparent 70%
         );
       }
+
       .skill-tag.violet:hover {
         background: rgba(139, 92, 246, 0.12);
         border-color: rgba(139, 92, 246, 0.4);
@@ -785,14 +876,17 @@
         background-size: 100% 200%;
         animation: timelineFlow 4s linear infinite;
       }
+
       @keyframes timelineFlow {
         0% {
           background-position: 0 0;
         }
+
         100% {
           background-position: 0 -200%;
         }
       }
+
       .timeline-dot {
         width: 40px;
         height: 40px;
@@ -806,11 +900,13 @@
         flex-shrink: 0;
         animation: dotPulse 3s ease-in-out infinite;
       }
+
       @keyframes dotPulse {
         0%,
         100% {
           box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
         }
+
         50% {
           box-shadow:
             0 0 35px rgba(0, 245, 255, 0.6),
@@ -832,6 +928,7 @@
         transform-style: preserve-3d;
         will-change: transform;
       }
+
       .project-card::before {
         content: "";
         position: absolute;
@@ -859,9 +956,11 @@
         z-index: 2;
         pointer-events: none;
       }
+
       .project-card:hover::before {
         opacity: 1;
       }
+
       .project-card::after {
         content: "";
         position: absolute;
@@ -879,9 +978,11 @@
         pointer-events: none;
         z-index: 3;
       }
+
       .project-card:hover::after {
         left: 150%;
       }
+
       .project-card:hover {
         border-color: rgba(0, 245, 255, 0.3);
         transform: translateY(-8px);
@@ -889,14 +990,17 @@
           0 25px 70px rgba(0, 0, 0, 0.5),
           0 0 50px rgba(0, 245, 255, 0.1);
       }
+
       .project-banner {
         height: 160px;
         position: relative;
         overflow: hidden;
       }
+
       .project-banner > div[style*="font-size: 2.5rem"] {
         transition: transform 0.6s var(--ease-out-expo);
       }
+
       .project-card:hover .project-banner > div[style*="font-size: 2.5rem"] {
         transform: scale(1.2) rotate(-5deg);
       }
@@ -912,6 +1016,7 @@
         position: relative;
         overflow: hidden;
       }
+
       .stat-card::before {
         content: "";
         position: absolute;
@@ -928,23 +1033,28 @@
         z-index: 0;
         animation: rotateBorder 4s linear infinite;
       }
+
       @property --angle {
         syntax: "<angle>";
         initial-value: 0deg;
         inherits: false;
       }
+
       @keyframes rotateBorder {
         to {
           --angle: 360deg;
         }
       }
+
       .stat-card:hover::before {
         opacity: 1;
       }
+
       .stat-card > * {
         position: relative;
         z-index: 1;
       }
+
       .stat-card:hover {
         border-color: rgba(0, 245, 255, 0.3);
         box-shadow: 0 0 35px rgba(0, 245, 255, 0.12);
@@ -958,6 +1068,7 @@
         overflow: hidden;
         will-change: transform;
       }
+
       .btn-primary {
         display: inline-flex;
         align-items: center;
@@ -980,6 +1091,7 @@
         -webkit-tap-highlight-color: transparent;
         white-space: nowrap;
       }
+
       .btn-primary::before,
       .btn-secondary::before {
         content: "";
@@ -996,24 +1108,29 @@
           height 0.6s var(--ease-out-expo);
         z-index: 0;
       }
+
       .btn-secondary::before {
         background: rgba(139, 92, 246, 0.2);
       }
+
       .btn-primary:hover::before,
       .btn-secondary:hover::before {
         width: 400px;
         height: 400px;
       }
+
       .btn-primary > *,
       .btn-secondary > * {
         position: relative;
         z-index: 1;
       }
+
       .btn-primary:hover {
         border-color: var(--cyan);
         box-shadow: 0 0 40px rgba(0, 245, 255, 0.3);
         transform: translateY(-3px);
       }
+
       .btn-secondary {
         display: inline-flex;
         align-items: center;
@@ -1032,6 +1149,7 @@
         -webkit-tap-highlight-color: transparent;
         white-space: nowrap;
       }
+
       .btn-secondary:hover {
         border-color: #a78bfa;
         box-shadow: 0 0 40px rgba(139, 92, 246, 0.25);
@@ -1061,9 +1179,11 @@
         outline: none;
         -webkit-appearance: none;
       }
+
       .contact-input::placeholder {
         color: var(--muted);
       }
+
       .contact-input:focus {
         border-color: rgba(0, 245, 255, 0.4);
         box-shadow: 0 0 25px rgba(0, 245, 255, 0.1);
@@ -1083,6 +1203,7 @@
         border-radius: 16px;
         transition: all 0.5s var(--ease-out-expo);
       }
+
       .achievement-card::before {
         content: "";
         position: absolute;
@@ -1100,19 +1221,23 @@
         opacity: 0;
         transition: opacity 0.5s;
       }
+
       .achievement-card:hover::before {
         opacity: 1;
       }
+
       @keyframes shineRotate {
         to {
           transform: rotate(360deg);
         }
       }
+
       .achievement-card:hover {
         border-color: rgba(251, 191, 36, 0.4);
         box-shadow: 0 0 50px rgba(251, 191, 36, 0.12);
         transform: translateY(-6px);
       }
+
       .achievement-card > * {
         position: relative;
         z-index: 1;
@@ -1124,11 +1249,13 @@
           opacity: 0.3;
           transform: translateY(0);
         }
+
         50% {
           opacity: 1;
           transform: translateY(8px);
         }
       }
+
       .scroll-indicator {
         animation: scrollPulse 2s ease-in-out infinite;
       }
@@ -1140,14 +1267,17 @@
         animation: spin 20s linear infinite;
         will-change: transform;
       }
+
       @keyframes spin {
         from {
           transform: rotate(0deg);
         }
+
         to {
           transform: rotate(360deg);
         }
       }
+
       .orbit-2 {
         animation: spin 30s linear infinite reverse;
       }
@@ -1159,6 +1289,7 @@
         overflow: hidden;
         position: relative;
       }
+
       .progress-fill {
         height: 100%;
         border-radius: 1px;
@@ -1168,6 +1299,7 @@
         box-shadow: 0 0 10px rgba(0, 245, 255, 0.4);
         position: relative;
       }
+
       .progress-fill::after {
         content: "";
         position: absolute;
@@ -1183,14 +1315,17 @@
         opacity: 0;
         animation: progressShimmer 2s var(--ease-out-expo) 1.8s;
       }
+
       @keyframes progressShimmer {
         0% {
           opacity: 0;
           transform: translateX(-20px);
         }
+
         50% {
           opacity: 1;
         }
+
         100% {
           opacity: 0;
           transform: translateX(20px);
@@ -1204,21 +1339,26 @@
         display: none;
         animation: shake 0.5s var(--ease-out-expo);
       }
+
       .field-error.show {
         display: block;
       }
+
       .contact-input.error {
         border-color: rgba(248, 113, 113, 0.5);
         animation: shake 0.4s var(--ease-out-expo);
       }
+
       @keyframes shake {
         0%,
         100% {
           transform: translateX(0);
         }
+
         25% {
           transform: translateX(-6px);
         }
+
         75% {
           transform: translateX(6px);
         }
@@ -1244,6 +1384,7 @@
         max-width: calc(100vw - 32px);
         box-shadow: 0 10px 40px rgba(0, 245, 255, 0.15);
       }
+
       #toast.show {
         transform: translateY(0) scale(1);
         opacity: 1;
@@ -1271,10 +1412,12 @@
         -webkit-tap-highlight-color: transparent;
         backdrop-filter: blur(20px);
       }
+
       #back-to-top.show {
         opacity: 1;
         transform: translateY(0) scale(1);
       }
+
       #back-to-top:hover {
         background: rgba(139, 92, 246, 0.3);
         box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
@@ -1291,6 +1434,7 @@
         position: relative;
         overflow: hidden;
       }
+
       .edu-card::before {
         content: "";
         position: absolute;
@@ -1301,9 +1445,11 @@
         background: linear-gradient(to bottom, var(--cyan), var(--violet));
         transition: width 0.4s var(--ease-out-expo);
       }
+
       .edu-card:hover::before {
         width: 6px;
       }
+
       .edu-card::after {
         content: "";
         position: absolute;
@@ -1320,9 +1466,11 @@
         transition: left 0.8s var(--ease-out-expo);
         pointer-events: none;
       }
+
       .edu-card:hover::after {
         left: 100%;
       }
+
       .edu-card:hover {
         border-color: rgba(0, 245, 255, 0.25);
         box-shadow:
@@ -1348,6 +1496,7 @@
         position: relative;
         overflow: hidden;
       }
+
       .social-icon::before {
         content: "";
         position: absolute;
@@ -1357,13 +1506,16 @@
         transition: opacity 0.4s;
         z-index: 0;
       }
+
       .social-icon > * {
         position: relative;
         z-index: 1;
       }
+
       .social-icon:hover::before {
         opacity: 0.15;
       }
+
       .social-icon:hover {
         border-color: var(--cyan);
         color: var(--cyan);
@@ -1384,16 +1536,19 @@
         pointer-events: none;
         transition: opacity 0.4s var(--ease-out-expo);
       }
+
       #project-modal.open {
         opacity: 1;
         pointer-events: all;
       }
+
       #modal-backdrop {
         position: absolute;
         inset: 0;
         background: rgba(5, 8, 16, 0.85);
         backdrop-filter: blur(10px);
       }
+
       #modal-box {
         position: relative;
         z-index: 1;
@@ -1411,9 +1566,11 @@
         transform: translateY(40px) scale(0.95);
         transition: transform 0.5s var(--ease-spring);
       }
+
       #project-modal.open #modal-box {
         transform: translateY(0) scale(1);
       }
+
       #modal-close {
         position: absolute;
         top: 14px;
@@ -1431,6 +1588,7 @@
         transition: all 0.3s var(--ease-out-expo);
         -webkit-tap-highlight-color: transparent;
       }
+
       #modal-close:hover {
         border-color: var(--cyan);
         color: var(--cyan);
@@ -1457,6 +1615,7 @@
         position: relative;
         overflow: hidden;
       }
+
       .btn-view::after {
         content: "";
         position: absolute;
@@ -1472,20 +1631,24 @@
         );
         transition: left 0.6s var(--ease-out-expo);
       }
+
       .btn-view:hover::after {
         left: 100%;
       }
+
       .btn-view:hover {
         background: rgba(0, 245, 255, 0.18);
         border-color: var(--cyan);
         box-shadow: 0 0 22px rgba(0, 245, 255, 0.25);
         transform: translateY(-2px);
       }
+
       .btn-view.github {
         background: rgba(139, 92, 246, 0.08);
         border-color: rgba(139, 92, 246, 0.25);
         color: #a78bfa;
       }
+
       .btn-view.github::after {
         background: linear-gradient(
           90deg,
@@ -1494,16 +1657,19 @@
           transparent
         );
       }
+
       .btn-view.github:hover {
         background: rgba(139, 92, 246, 0.18);
         border-color: #a78bfa;
         box-shadow: 0 0 22px rgba(139, 92, 246, 0.25);
       }
+
       .btn-view.youtube {
         background: rgba(239, 68, 68, 0.08);
         border-color: rgba(239, 68, 68, 0.25);
         color: #f87171;
       }
+
       .btn-view.youtube::after {
         background: linear-gradient(
           90deg,
@@ -1512,6 +1678,7 @@
           transparent
         );
       }
+
       .btn-view.youtube:hover {
         background: rgba(239, 68, 68, 0.18);
         border-color: #f87171;
@@ -1535,6 +1702,7 @@
         position: relative;
         overflow: hidden;
       }
+
       .play-btn {
         width: 60px;
         height: 60px;
@@ -1548,17 +1716,20 @@
         box-shadow: 0 0 30px rgba(239, 68, 68, 0.3);
         animation: playPulse 2s ease-in-out infinite;
       }
+
       @keyframes playPulse {
         0%,
         100% {
           box-shadow: 0 0 30px rgba(239, 68, 68, 0.3);
         }
+
         50% {
           box-shadow:
             0 0 50px rgba(239, 68, 68, 0.6),
             0 0 80px rgba(239, 68, 68, 0.2);
         }
       }
+
       .play-btn:hover {
         background: rgba(239, 68, 68, 1);
         transform: scale(1.15);
@@ -1584,6 +1755,7 @@
         .float-delay {
           animation: none;
         }
+
         .orbit {
           display: none;
         }
@@ -1596,20 +1768,25 @@
           padding-right: 16px;
           min-height: 100svh;
         }
+
         #home h1 {
           font-size: clamp(2.6rem, 14vw, 4rem) !important;
         }
+
         #home .font-mono {
           font-size: 0.95rem !important;
         }
+
         #home > div > p {
           font-size: 0.95rem !important;
         }
+
         #home .flex.flex-wrap.justify-center.gap-3.mb-12 {
           flex-direction: column;
           align-items: center;
           gap: 12px;
         }
+
         #home .flex.flex-wrap.justify-center.gap-3.mb-12 a {
           width: 100%;
           max-width: 260px;
@@ -1621,6 +1798,7 @@
         #home {
           padding-top: 80px;
         }
+
         #home h1 {
           font-size: clamp(3rem, 12vw, 5rem) !important;
         }
@@ -1630,144 +1808,187 @@
         #about {
           padding: 60px 16px;
         }
+
         #about .grid {
           grid-template-columns: 1fr !important;
           gap: 32px;
         }
+
         #about .grid.grid-cols-2 {
           gap: 12px;
         }
+
         .stat-card {
           padding: 16px 12px;
         }
+
         .stat-card .text-4xl {
           font-size: 2rem !important;
         }
+
         #skills {
           padding: 60px 16px;
         }
+
         #skills .grid.md\\:grid-cols-2 {
           grid-template-columns: 1fr !important;
           gap: 16px;
         }
+
         .skill-tag {
           font-size: 0.72rem;
           padding: 6px 10px;
         }
+
         #experience {
           padding: 60px 16px;
         }
+
         #experience .relative.pl-16 {
           padding-left: 48px;
         }
+
         .timeline-line {
           left: 14px;
         }
+
         .timeline-dot {
           width: 32px;
           height: 32px;
           left: -14px !important;
         }
+
         .timeline-dot svg {
           width: 13px;
           height: 13px;
         }
+
         .glass-bright {
           padding: 20px 16px;
         }
+
         .glass-bright h3 {
           font-size: 1.2rem !important;
         }
+
         .glass-bright .font-mono {
           font-size: 0.78rem;
         }
+
         #experience .flex.flex-wrap.items-start.justify-between {
           gap: 8px;
         }
+
         #projects {
           padding: 60px 16px;
         }
+
         #projects .grid {
           grid-template-columns: 1fr !important;
         }
+
         .project-banner {
           height: 130px;
         }
+
         .project-card .p-5 {
           padding: 16px;
         }
+
         .project-card h3 {
           font-size: 1rem !important;
         }
+
         .project-card p {
           font-size: 0.82rem;
         }
+
         #achievements {
           padding: 60px 16px;
         }
+
         .achievement-card {
           padding: 28px 20px;
         }
+
         .achievement-card h3 {
           font-size: 1.5rem !important;
         }
+
         .achievement-card p {
           font-size: 0.9rem;
         }
+
         .achievement-card .flex.flex-wrap.justify-center.gap-3 {
           gap: 8px;
         }
+
         .achievement-card .flex.flex-wrap.justify-center.gap-3 span {
           font-size: 0.72rem;
           padding: 6px 14px;
         }
+
         #education {
           padding: 60px 16px;
         }
+
         .edu-card {
           padding: 20px 16px 20px 20px;
         }
+
         .edu-card .flex.flex-wrap {
           flex-direction: column;
           gap: 12px;
         }
+
         .edu-card .text-right {
           text-align: left;
         }
+
         .edu-card .text-3xl {
           font-size: 1.8rem;
         }
+
         #education .grid.sm\\:grid-cols-2 {
           grid-template-columns: 1fr !important;
         }
+
         #contact {
           padding: 60px 16px;
         }
+
         #contact .grid.md\\:grid-cols-5 {
           grid-template-columns: 1fr !important;
         }
+
         .glass-bright.rounded-2xl.p-7 {
           padding: 20px 16px;
         }
+
         #contact .grid.sm\\:grid-cols-2 {
           grid-template-columns: 1fr !important;
           gap: 16px;
         }
+
         .btn-primary.w-full {
           font-size: 0.82rem;
           padding: 14px;
         }
+
         footer {
           padding: 40px 16px;
         }
+
         footer .grid.md\\:grid-cols-3 {
           grid-template-columns: 1fr !important;
           gap: 24px;
         }
+
         footer .flex.flex-wrap.justify-between {
           flex-direction: column;
           gap: 6px;
         }
+
         .section-title {
           font-size: 2.4rem !important;
         }
@@ -1777,12 +1998,15 @@
         body {
           font-size: 14px;
         }
+
         .section-title {
           font-size: 1.5rem !important;
         }
+
         #home h1 {
           font-size: 2.4rem !important;
         }
+
         .skill-tag {
           font-size: 0.68rem;
           padding: 5px 8px;
@@ -1794,12 +2018,15 @@
           padding: 24px 16px;
           border-radius: 16px;
         }
+
         #modal-box h2 {
           font-size: 1.3rem !important;
         }
+
         .modal-video-thumb {
           height: 140px;
         }
+
         .play-btn {
           width: 48px;
           height: 48px;
@@ -1820,19 +2047,23 @@
         .btn-view {
           padding: 9px 14px;
         }
+
         a,
         button {
           min-height: 44px;
         }
+
         .btn-view {
           min-height: 36px;
         }
+
         .social-icon {
           min-height: 42px;
         }
       }
     </style>
   </head>
+
   <body>
     <!-- ===== LOADER ===== -->
     <div id="loader">
@@ -2936,36 +3167,67 @@
                 class="font-display font-bold text-lg mb-2"
                 style="color: var(--bright)"
               >
-                YouTube Link Recorder
+                Task Management System
               </h3>
               <p
                 class="text-sm leading-relaxed mb-3"
                 style="color: var(--soft)"
               >
-                Personal tool to save, categorize, search, and filter YouTube
-                links. Full CRUD operations with responsive design and intuitive
-                category management.
+                A full-stack Task Management System that enables multiple users
+                to create, manage, and track their projects and tasks
+                efficiently. Users can organize tasks using categories,
+                priorities, and status tracking (Pending, In Progress,
+                Completed). Each user has a private workspace and cannot access
+                other users' tasks. Administrators can view all users and
+                projects, manage accounts, and remove inactive users. Built with
+                Next.js, Node.js, Express.js, MongoDB, Tailwind CSS, and
+                shadcn/ui.
               </p>
               <div class="flex flex-wrap gap-1.5 mb-4">
                 <span
                   class="skill-tag"
                   style="padding: 3px 9px; font-size: 0.68rem"
-                  >JavaScript</span
+                  >Next.js</span
                 >
                 <span
                   class="skill-tag"
                   style="padding: 3px 9px; font-size: 0.68rem"
-                  >HTML5</span
+                  >Node.js</span
                 >
                 <span
                   class="skill-tag"
                   style="padding: 3px 9px; font-size: 0.68rem"
-                  >CSS3</span
+                  >Express.js</span
+                >
+                <span
+                  class="skill-tag"
+                  style="padding: 3px 9px; font-size: 0.68rem"
+                  >MongoDB</span
                 >
                 <span
                   class="skill-tag violet"
                   style="padding: 3px 9px; font-size: 0.68rem"
-                  >CRUD</span
+                  >Tailwind CSS</span
+                >
+                <span
+                  class="skill-tag violet"
+                  style="padding: 3px 9px; font-size: 0.68rem"
+                  >shadcn/ui</span
+                >
+                <span
+                  class="skill-tag"
+                  style="padding: 3px 9px; font-size: 0.68rem"
+                  >JWT Auth</span
+                >
+                <span
+                  class="skill-tag"
+                  style="padding: 3px 9px; font-size: 0.68rem"
+                  >Task Management</span
+                >
+                <span
+                  class="skill-tag violet"
+                  style="padding: 3px 9px; font-size: 0.68rem"
+                  >Admin Panel</span
                 >
               </div>
               <div class="flex gap-2 flex-wrap">
@@ -2986,7 +3248,7 @@
                   View Project
                 </button>
                 <a
-                  href="https://github.com/gitbubai04"
+                  href="https://github.com/gitbubai04/task-managment"
                   target="_blank"
                   rel="noopener"
                   class="btn-view github"
@@ -3740,10 +4002,12 @@
           transform 0.3s var(--ease-out-expo);
         display: inline-block;
       }
+
       .footer-link:hover {
         color: var(--cyan);
         transform: translateX(4px);
       }
+
       .contact-icon:hover {
         transform: scale(1.1) rotate(-5deg);
         box-shadow: 0 0 25px rgba(0, 245, 255, 0.2);
@@ -4226,16 +4490,18 @@
         const modalClose = document.getElementById("modal-close");
         const modalBackdrop = document.getElementById("modal-backdrop");
 
-        const YOUTUBE_VIDEO_ID = "dQw4w9WgXcQ";
-        const GITHUB_URL = "https://github.com/gitbubai04";
+        const YOUTUBE_VIDEO_ID = "Z6yzXJA2BI0";
+        const GITHUB_URL = "https://github.com/gitbubai04/task-managment";
 
         window.openProjectModal = function () {
           modalContent.innerHTML = `
             <div style="margin-bottom:16px;">
-              <div style="display:flex;align-items:center;gap:10px;margin-bottom:5px;">
-                <span style="font-size:1.5rem;">▶️</span>
-                <h2 id="modal-title" class="font-display font-bold" style="font-size:1.25rem;color:var(--bright);">YouTube Link Recorder</h2>
-              </div>
+             <div style="display:flex;align-items:center;gap:10px;margin-bottom:5px;">
+  <span style="font-size:1.5rem;">📋</span>
+  <h2 id="modal-title" class="font-display font-bold" style="font-size:1.25rem;color:var(--bright);">
+    Task Management System
+  </h2>
+</div>
               <div style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:#f87171;letter-spacing:0.05em;">Personal Project</div>
             </div>
             <div class="modal-video-thumb">
@@ -4245,16 +4511,20 @@
                 <span style="font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:#f87171;letter-spacing:0.05em;">▶ Watch Demo on YouTube</span>
               </a>
             </div>
-            <p style="color:var(--soft);line-height:1.7;margin-bottom:16px;font-size:0.9rem;">
-              A personal productivity tool to save, categorize, search, and filter YouTube links. Built with vanilla JavaScript, HTML5, and CSS3, featuring full CRUD operations, intuitive category management, and a fully responsive design.
-            </p>
+           <p style="color:var(--soft);line-height:1.7;margin-bottom:16px;font-size:0.9rem;">
+  A full-stack Task Management System that enables multiple users to create, manage, and track their projects and tasks efficiently. Users can organize tasks using categories, priorities, and status tracking (Pending, In Progress, Completed). Each user has a private workspace and cannot access other users' tasks. Administrators can view all users and projects, manage accounts, and remove inactive users. Built with Next.js, Node.js, Express.js, MongoDB, Tailwind CSS, and shadcn/ui.
+</p>
             <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px;">
-              <span class="skill-tag" style="padding:3px 9px;font-size:0.7rem;">JavaScript</span>
-              <span class="skill-tag" style="padding:3px 9px;font-size:0.7rem;">HTML5</span>
-              <span class="skill-tag" style="padding:3px 9px;font-size:0.7rem;">CSS3</span>
-              <span class="skill-tag violet" style="padding:3px 9px;font-size:0.7rem;">CRUD</span>
-              <span class="skill-tag violet" style="padding:3px 9px;font-size:0.7rem;">LocalStorage</span>
-            </div>
+  <span class="skill-tag" style="padding:3px 9px;font-size:0.7rem;">Next.js</span>
+  <span class="skill-tag" style="padding:3px 9px;font-size:0.7rem;">Node.js</span>
+  <span class="skill-tag" style="padding:3px 9px;font-size:0.7rem;">Express.js</span>
+  <span class="skill-tag" style="padding:3px 9px;font-size:0.7rem;">MongoDB</span>
+  <span class="skill-tag violet" style="padding:3px 9px;font-size:0.7rem;">Tailwind CSS</span>
+  <span class="skill-tag violet" style="padding:3px 9px;font-size:0.7rem;">shadcn/ui</span>
+  <span class="skill-tag" style="padding:3px 9px;font-size:0.7rem;">Authentication</span>
+  <span class="skill-tag" style="padding:3px 9px;font-size:0.7rem;">Role Management</span>
+  <span class="skill-tag" style="padding:3px 9px;font-size:0.7rem;">Task Tracking</span>
+</div>
             <div style="display:flex;gap:10px;flex-wrap:wrap;">
               <a href="${GITHUB_URL}" target="_blank" rel="noopener" class="btn-view github" style="padding:9px 16px;font-size:0.78rem;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
